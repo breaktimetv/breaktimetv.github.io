@@ -1,0 +1,591 @@
+<footer>
+  <div align="center" id="footer-post" style="color:#acacac; display:none" class="disable-select">
+    <span>BreakTimeTV</span> No almacena ningún vídeo, estos son alojados en sitios de terceros, nosotros solo recopilamos los mejores sin publicidad  - Hay {{ site.posts | size }} contenido disponible
+
+    <p> BreakTimeTV © - 2020 <svg class="love"><use xlink:href="#icon-heart"></use></svg>  </p>
+    Desarrollado por: <span style="color:#acacac; font-weight: bold"> Un Breaknamita  </span>
+ 
+
+  
+    <div align="center" style="color:#acacac;">
+      <a href="{{ site.baseurl}}/politica-privacidad"> Política de Privacidad </a>
+      |
+      <a href="{{ site.baseurl}}/aviso-legal"> Aviso Legal </a>
+      |
+      <a href="{{ site.baseurl}}/terminos-servicios"> Términos de servicios </a>
+
+
+      </div>
+    <div align="center" style="color:#acacac;    padding-top: 10px;" id="footer-facebook-post">
+   
+      <a rel="noreferrer"  href="https://www.instagram.com/_breaktimetv/"  target="_blank" title="Instagram">
+        <svg><use xlink:href="#icon-instagram"></use></svg>
+      </a>
+
+   
+    
+    </div>
+  </div>
+
+
+
+
+
+<script src="{{ "/assets/js/main2.js" | prepend: site.baseurl }}"></script>
+
+<script  src="/assets/js/sweetalert.min.js"></script>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "BreaktimeTv",
+  "url": "https://breaktimetv.github.io/",
+   "sameAs" : [
+     "https://twitter.com/imbriitneysam",
+     "https://www.facebook.com/breaktimetvoficial/",
+     "https://www.linkedin.com/in/ing-fernando-castillo-118a951a1/",
+     "https://www.instagram.com/_breaktimetv/?hl=es"
+     ],
+    "address": {
+      "streetAddress": "Gonzales Rubio",
+      "addressRegion": "EC",
+      "postalCode": "070150",
+      "addressCountry": "EC"
+    }
+  }
+  </script>
+
+
+<script type="text/javascript">
+$('#gform').on('submit', function(e) {
+  $('#myModal').modal('hide');
+  $('#entry.257663063').val('');
+  
+  swal("Enviado!", "Gracias por haber reportado el problema, lo solucionaremos lo más pronto posible!", "success")
+  });
+</script>
+
+     
+
+
+
+ 
+
+     
+<script src="/assets/js/prefixfree.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+
+
+<script>
+
+
+
+
+
+
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString() + "; path=/";
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1);
+      if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+  }
+  return "";
+}
+
+
+function checkCookie(PageTitle, PageDescription, PageUrl, portada, fecha_hora ) {
+
+  var newArray = new Array(); /*Temp Array to generate cookie*/
+  var tempObject = ""; /*To hold the already exists page data*/
+  var arrObject;  /*To store cookie value in a object*/
+
+  if (getCookie("RecentViewList") != '') {
+      arrObject = $.parseJSON(getCookie("RecentViewList")); /* Convert string to object */
+  }
+
+  if (arrObject != null) {
+      $.each(arrObject, function (index, value) {
+          if (PageUrl == value.Url) {
+              tempObject = { Title: PageTitle, Desc: PageDescription, Url: PageUrl, Portada: portada, Fecha: fecha_hora };
+            
+            } else {
+              newArray.push({ Title: value.Title.toString(), Desc: value.Desc.toString(), Url: value.Url.toString(), Portada: value.Portada, Fecha: value.Fecha  });
+             
+            }
+      });
+  }
+
+  if (tempObject != "") {
+      newArray.push(tempObject);
+  } else {
+      if (newArray.length > 45) newArray.splice(0, 1); /*Remove most recent value from array*/
+      tempObject = { Title: PageTitle, Desc: PageDescription, Url: PageUrl, Portada: portada, Fecha: fecha_hora };
+   
+      newArray.push(tempObject);
+    
+  }
+
+  var stringObj = JSON.stringify(newArray); /*Convert Array to JSON formated string*/
+  setCookie("RecentViewList", stringObj, 90);
+
+ 
+}
+
+
+window.addEventListener('load', function() {
+ 
+
+ /*
+
+ if (localStorage.getItem("userId") === null) { // si no esta logeado
+
+   document.getElementById("logeado").style.display = "none";
+   document.getElementById("no_logeado").style.display = "block";
+   document.getElementById("descargar").style.display = "block";
+
+  
+ }else{
+
+   document.getElementById("logeado").style.display = "block";
+   document.getElementById("no_logeado").style.display = "none";
+   document.getElementById("descargar").style.display = "block";
+
+   var avatar = localStorage.getItem('avatar');
+   document.getElementById("avatar").src = avatar;
+   document.getElementById("avatar2").src = avatar;
+
+   var username = localStorage.getItem('username');
+      document.getElementById("username_menu").innerHTML = username;
+
+      var email = localStorage.getItem('email');
+      document.getElementById("email_menu").innerHTML = email;
+ }
+
+ $( "#cerrar_sesion" ).click(function() {
+
+
+  localStorage.removeItem("displayName");
+  localStorage.removeItem("userId");
+  localStorage.removeItem("username");
+  localStorage.removeItem("avatar");
+  localStorage.removeItem("email");
+
+  location.reload();
+
+});
+
+$("#descargar").click(function() {
+  if (localStorage.getItem("userId") === null) {
+
+    swal({
+                title: "Advertencia",
+                text: "Necesitas iniciar sesión para descargar este contenido.",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                confirmButtonText: "Inicia Sesión o Registrate",
+                cancelButtonText: "Ahora no",
+                closeOnConfirm: true,
+                closeOnCancel: true,
+                closeOnClickOutside: true,
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                  document.location.href="https://breaktimetv.github.io/login";
+                 
+
+                }
+            });
+    
+
+  }else{
+
+    $('#exampleModal1').modal('show'); 
+
+
+
+
+
+  }
+
+
+
+});
+
+*/
+
+
+
+
+  var PageDescription = $("meta[name='description']").attr("content");
+var PageTitle = document.title;
+var PageUrl = window.location.href;
+
+  
+
+if(window.location.pathname === '/profile' || window.location.pathname === '/login' || window.location.pathname === '/registro' || window.location.pathname === '/historial' || window.location.pathname === '/conexion' || window.location.pathname === '/' || window.location.pathname.includes('/contenido/')  || window.location.pathname.includes('/peliculas/')  || window.location.pathname.includes('/series/')  || window.location.pathname.includes('/netflix/') || window.location.pathname.includes('/todos/') || window.location.pathname === '/informacion' || window.location.pathname === '/politica-privacidad' || window.location.pathname === '/terminos-servicios' || window.location.pathname === '/aviso-legal'){
+ console.log("no guarda en el historial");
+}else{
+  var hoy = new Date();
+  var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+  var fechaYHora = fecha;
+
+  var portada=  document.getElementById("imagen_portada").value;
+
+  if ((typeof document.title !== "undefined") && (typeof $("meta[name='description']").attr("content") !== "undefined")) {
+       
+          checkCookie(PageTitle.toString(), PageDescription.toString(), PageUrl.toString(), portada, fechaYHora);
+      }
+
+}
+
+   
+});
+
+/*
+function descargarVideo(url){
+
+  //var str = url;
+  //var key = str.split("/v/");
+
+
+  const config = {
+                headers: {
+                  'X-Requested-With': 'XMLHttpRequest',
+                  'Content-Type': 'application/json'
+                }
+              };
+              const url_consulta= "https://www.fembed.com/api/source/" +url;
+
+            axios.post(url_consulta, config).then(function(res) {
+
+              console.log("la data es "+ res.data);
+                if(res.data.sucess == true) {
+            
+                       alert("se encontraron links");
+
+                    }else{
+                      alert("no se encontraron links");
+                    }
+                }).catch(function(err) {
+                     alert("ocurrio un error con el llamado de la api");
+                });
+}
+
+*/
+
+
+</script>
+
+
+
+
+
+
+    
+
+
+
+     <script  src="/assets/js/bootstrap.min.js"></script>
+     <script  src="/assets/js/malware.js"></script>
+     <script  src="/assets/js/footer-post2.js"></script>
+     <script  src="/assets/js/WebModule.js"></script>
+      <script>
+        WebModule.verify  = true;
+        WebModule.verbose = true;
+        WebModule.publish = true;
+        </script>
+        <script  src="/assets/js/ES.js"></script>
+        <script  src="/assets/js/WebGLDetector.js"></script>
+        <script  src="/assets/js/UserAgent.js"></script>
+      
+        <script>
+
+          function mostrar(){
+
+          document.getElementById("loader").style.display = "block";
+
+          }
+
+         
+
+
+
+
+          var ua = new UserAgent();
+
+          if(ua.PC){
+
+          
+
+       
+
+            var titulo_movil=  document.getElementById("titulo_movil");
+            if(titulo_movil){
+              document.getElementById("titulo_movil").style.paddingTop = "60px";
+            }
+           
+          
+         
+            var footer_post=  document.getElementById("footer-post");
+            if(footer_post){
+              document.getElementById("footer-post").style.display = "block";
+            }
+           
+        
+            
+         
+
+            var filtros = document.getElementById("filtros");
+            if(filtros){
+              document.getElementById("filtros").style.display = "none";
+
+            }
+
+     
+            var get_app = document.getElementById("get_app");
+            if(get_app){
+              document.getElementById("get_app").style.display = "block";
+
+            }
+            
+ 
+
+    
+          
+            
+           
+
+      
+          }
+
+          if(ua.MOBILE || ua.iPad){
+
+          
+
+            var titulo_movil=  document.getElementById("titulo_movil");
+      if(titulo_movil){
+        document.getElementById("titulo_movil").style.paddingTop = "60px";
+      }
+
+            var instagram_whatsapp2 = document.getElementById("instagram_whatsapp2");
+            if(instagram_whatsapp2){
+              document.getElementById("instagram_whatsapp2").style.display = "block";
+
+            }
+
+            var instagram_whatsapp1 = document.getElementById("instagram_whatsapp1");
+            if(instagram_whatsapp1){
+              document.getElementById("instagram_whatsapp1").style.display = "block";
+              if(navigator.share !== undefined) {
+                  document.addEventListener('DOMContentLoaded', e => {
+                    var shareBtn = document.getElementById("instagram_whatsapp1");
+                    shareBtn.addEventListener('click', clickEvent => {
+
+                      var PageDescription = $("meta[name='description']").attr("content");
+                      var PageTitle = document.title;
+                      var PageUrl = window.location.href;
+                      
+                      clickEvent.preventDefault();
+                      navigator.share({title: PageTitle, text: PageDescription, url: PageUrl})
+                        .then(() => console.log('Successful share'),
+                        error => console.log('Error sharing:', error));
+                    });
+                  });
+              }
+
+
+            }
+
+            
+
+  
+
+     
+         
+
+      
+
+       
+      
+          }
+
+          
+      
+
+
+         
+
+          if(ua.WEB_VIEW){
+
+            $('body').html("");
+  
+  
+
+   
+
+           
+
+          
+     
+           
+          }else{
+            
+           
+            var compartir = document.getElementById("descargas3");
+            
+
+            if(compartir)
+            {
+
+              document.getElementById("descargas3").style.display = "block";
+
+            }
+
+    
+            
+            
+            
+            
+          }
+
+        
+          
+          
+          </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+
+window.onscroll = function () {
+
+  var  nav = document.getElementById('header-fixed-1');
+  if (window.pageYOffset >25) {
+              
+
+      		nav.style.background = "#000000";
+      	
+      	}
+      	else{
+          
+      		nav.style.background = "#00000000";
+      		
+        }
+
+
+        
+   
+
+}
+
+
+
+
+
+</script>
+
+
+<script  src="/assets/js/tooltipster.bundle.min.js"></script>
+<script>
+
+$('.tooltipster').tooltipster({
+              animation: 'fade',
+              delay: 200,
+              theme: 'tooltipster-punk',
+              side: 'bottom',
+              contentCloning: true,
+              contentAsHTML: true
+            });
+
+
+
+
+
+
+
+
+            $('#anio').on('change', function() {
+              mostrar();
+
+            var valor= this.value;
+           
+            document.location.href="https://breaktimetv.github.io"+valor;
+
+            });
+
+            $('#contenido_filtro').on('change', function() {
+              mostrar();
+
+              var valor= this.value;
+
+              document.location.href="https://breaktimetv.github.io"+valor;
+
+
+            });
+
+           
+
+            
+
+      
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     
+
+  
+
+
+

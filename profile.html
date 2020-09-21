@@ -1,0 +1,73 @@
+---
+layout: main2
+permalink: /profile2
+title: "Mi Perfil"
+---
+
+
+<main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    <div class="row" style="padding: 60px 10px 0px 20px;">
+        <div class="col-12 col-md-4 col-lg-4"> 
+            
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-4"> 
+
+            <p style="color:white; font-size:28px;    text-align: center;font-weight: bold;margin-bottom: 5px;">Hola!</p>
+            <p id="displayName" style="color:white; font-size:17px;margin-bottom: 10px;"></p>
+            <p  style="color:white; font-size:17px;margin-bottom: 10px;">Gracias por logearte, proximamente tendrás nuevas funcionalidades</p>
+
+         
+
+         
+
+            
+
+            </div>
+
+
+            <div class="col-12 col-md-4 col-lg-4"> 
+
+            
+
+            </div>
+	
+  </div>
+  <script  src="/assets/js/cre.js"></script>
+<script  src="/assets/js/fapp.js"></script>
+<script  src="/assets/js/fs.js"></script>
+<script  src="/assets/js/fa.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+window.addEventListener('load', function() {
+
+  if (localStorage.getItem("userId") === null) {
+
+        window.location.href = "/";
+    }else{
+
+      
+
+      var displayName = localStorage.getItem('displayName');
+                document.getElementById("displayName").innerHTML = displayName;
+    }
+
+
+
+
+   
+           
+});
+
+  
+
+  
+  </script>
+
+   
+
+
+
+
+
+</main>

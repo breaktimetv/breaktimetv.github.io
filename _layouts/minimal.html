@@ -1,0 +1,20 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+    {% include head2.html %}
+    <body class="has-push-menu">
+        {% include svg-icons.html %}
+        {% include header2.html %}
+        <section class="post">
+
+            <article role="main">
+                {{ content }}
+            </article>
+
+            {% include footer2.html %}
+        </section>
+    </body>
+</html>

@@ -1,0 +1,280 @@
+<footer>
+  <div id="footer-index" style="display:none" align="center" style="color:#acacac;" class="disable-select">
+ <span style="color:#acacac;font-weight: bold" >BreakTimeTV</span> <span style="color:#acacac;"> No almacena ningún vídeo, estos son alojados en sitios de terceros, nosotros solo recopilamos los mejores sin publicidad - Hay {{ site.posts | size }} contenido disponible</span>
+ <p> BreakTimeTV © - 2020 <svg class="love"><use xlink:href="#icon-heart"></use></svg>  </p>
+ <span style="color:#acacac;">Desarrollado por: </span><span style="color:#acacac; font-weight: bold"> Un Breaknamita </span>
+
+ <div align="center" style="color:#acacac;">
+   <a href="{{ site.baseurl}}/politica-privacidad"> Política de Privacidad </a>
+   |
+   <a href="{{ site.baseurl}}/aviso-legal"> Aviso Legal </a>
+   |
+   <a href="{{ site.baseurl}}/terminos-servicios"> Términos de servicios </a>
+
+
+   </div>
+   <div align="center"  id="footer-facebook-index" style="color:#acacac;    padding-top: 10px;">
+    
+     <a  rel="noreferrer" href="https://www.instagram.com/_breaktimetv/"  target="_blank" title="Instagram">
+       <svg><use xlink:href="#icon-instagram"></use></svg>
+     </a>
+
+   </div>
+ 
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+ var prevScrollpos = window.pageYOffset;
+ window.onscroll = function() {
+ var currentScrollPos = window.pageYOffset;
+   if (prevScrollpos > currentScrollPos) {
+     document.getElementById("header-fixed-1").style.top = "0";
+   } else {
+     document.getElementById("header-fixed-1").style.top = "-60px";
+   }
+   prevScrollpos = currentScrollPos;
+
+   var  nav = document.getElementById('header-fixed-1');
+   if (window.pageYOffset >25) {
+               
+
+           nav.style.background = "#000000";
+         
+         }
+         else{
+           
+           nav.style.background = "#00000000";
+           
+         }
+ }
+ </script>
+
+<script src="{{ "/assets/js/main2.js" | prepend: site.baseurl }}"></script>
+
+<script  src="/assets/js/sweetalert.min.js"></script>
+<script src="/assets/js/jquery-3.4.1.min2.js"></script>
+<script  src="/assets/js/jquery-latest.min2.js"></script>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+   <script  src="/assets/js/bootstrap.min.js"></script>
+  
+   <script  src="/assets/js/WebModule.js"></script>
+   <script>
+     WebModule.verify  = true;
+     WebModule.verbose = true;
+     WebModule.publish = true;
+     </script>
+     <script  src="/assets/js/ES.js"></script>
+
+     <script  src="/assets/js/WebGLDetector.js"></script>
+     <script  src="/assets/js/UserAgent.js"></script>
+
+    
+  
+
+
+   
+     
+
+      
+       
+
+     <script>
+
+   $('#contenido_filtro').on('change', function() {
+                 mostrar();
+
+                 var valor= this.value;
+
+                 document.location.href="https://breaktimetv.github.io"+valor;
+
+
+               });
+
+
+
+
+       var ua = new UserAgent();
+
+       $( document ).ready(function() {
+
+      
+         
+
+  
+
+         
+
+
+
+
+         if(ua.PC){
+
+        
+
+       
+
+         
+         document.getElementById("footer-index").style.display = "block";
+        
+        
+
+
+        
+     
+       
+        
+         
+
+   
+       }
+
+
+
+       
+
+
+       if(ua.WEB_VIEW){
+
+        
+         $('body').html("");
+
+       }
+
+  
+        });
+
+
+
+
+
+
+
+
+     
+                    
+       
+       
+       
+       </script>
+
+
+
+<script>
+
+
+window.addEventListener('load', function() {
+ console.log( "ready!" );
+ document.getElementById("loader").style.display = "none";
+ /*
+ if (localStorage.getItem("userId") === null) {
+
+   document.getElementById("logeado").style.display = "none";
+     document.getElementById("no_logeado").style.display = "block";
+
+
+   }else{
+     document.getElementById("logeado").style.display = "block";
+     document.getElementById("no_logeado").style.display = "none";
+
+
+     var avatar = localStorage.getItem('avatar');
+     document.getElementById("avatar").src = avatar;
+     document.getElementById("avatar2").src = avatar;
+
+     var username = localStorage.getItem('username');
+         document.getElementById("username_menu").innerHTML = username;
+
+         var email = localStorage.getItem('email');
+         document.getElementById("email_menu").innerHTML = email;
+
+   }
+*/
+   
+});
+
+ /*
+$( "#cerrar_sesion" ).click(function() {
+
+
+localStorage.removeItem("displayName");
+localStorage.removeItem("userId");
+localStorage.removeItem("username");
+localStorage.removeItem("avatar");
+localStorage.removeItem("email");
+
+location.reload();
+
+});
+*/
+
+function mostrar(){
+
+document.getElementById("loader").style.display = "table";
+
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script  src="/assets/js/footer2.js"></script>
+
+
+
+
+
+
+
+      
+   
+       
+
+
+
+   
+   
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

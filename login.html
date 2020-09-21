@@ -1,0 +1,160 @@
+---
+layout: main2
+permalink: /login2
+title: "Login de BreakTimeTV"
+---
+
+
+
+<main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    <div class="row" style="padding: 60px 10px 0px 20px;">
+        <div class="col-12 col-md-4 col-lg-4"> 
+            
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-4"> 
+
+            <p style="color:white; font-size:28px;    text-align: center;font-weight: bold;margin-bottom: 5px;">Iniciar sesión</p>
+            <p style="color:white; font-size:17px;margin-bottom: 10px;">Por favor ingresa tus datos correctamente.</p>
+
+            <form id="form_login" action="javascript:postData()" method="post">
+
+
+               
+
+
+
+
+                <div class="input-group">
+                    <span class="input-group-addon"><i class='fas fa-envelope' style="    color: #fff;"></i></span>	
+                    <input required id="emailUser" name="emailUser" style="    height: 44px;" type="email" class="form-control" placeholder="Ingrese su email" aria-label="Email">
+                   
+                    </div>
+
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class='fas fa-lock' style="    color: #fff;"></i></span>	
+                        <input required id="passwordUser" name="passwordUser" style="    height: 44px;" type="password" class="form-control" placeholder="Ingrese su contraseña" aria-label="Email">
+                        <span style="cursor: pointer;" id="password_icon" onclick="mostrarContrasena()" class="input-group-addon"><i id="icon_password" class='fas fa-eye' style="color: #fff;"></i></span>
+                        </div>
+
+                      
+                
+
+                  <div align="center" style="    margin-top: 15px;">
+                      <button  id="btn_login" type="submit" type="button" class="btn btn-primary btn-lg">Iniciar sesión</button>
+
+                      <p style="color: white;font-size: 15px;">¿No tienes una cuenta? <a style="color: #ed0b4a;" onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/registro"> Regístrate Ahora</a></p>
+
+                  </div>
+                
+              </form>
+
+         
+
+            
+
+            </div>
+
+
+            <div class="col-12 col-md-4 col-lg-4"> 
+
+            
+
+            </div>
+	
+  </div>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+
+window.addEventListener('load', function() {
+ 
+
+ if (localStorage.getItem("userId") === null) {
+
+  
+ }else{
+
+    window.location.href = "/profile";
+ }
+
+});
+
+  
+ function mostrarContrasena(){
+      var tipo = document.getElementById("passwordUser");
+      if(tipo.type == "password"){
+          tipo.type = "text";
+          $('#icon_password').addClass('fa-eye-slash').removeClass('fa-eye');
+         
+      }else{
+          tipo.type = "password";
+          $('#icon_password').addClass('fa-eye').removeClass('fa-eye-slash');
+      }
+  }
+
+
+
+
+
+
+
+          function postData() {
+
+            var emailUser = document.getElementById('emailUser').value;
+            var passwordUser = document.getElementById('passwordUser').value;
+            $("#loader").show();
+            $("#btn_login").prop('disabled', true);
+
+            const data= {email: emailUser,password: passwordUser};
+            const config = {
+                headers: {
+                  'X-Requested-With': 'XMLHttpRequest',
+                  'Content-Type': 'application/json'
+                }
+              };
+          
+
+            axios.post('https://us-central1-breaktimetv-2c832.cloudfunctions.net/requestWeb/api/v1/acceso/login', data, config).then(function(res) {
+                   if(res.data.code == 200){
+                    $("#loader").hide();
+                    
+                    
+                    localStorage.setItem('displayName', res.data.user.displayName);
+                    localStorage.setItem('userId', res.data.user.userId);
+                    localStorage.setItem('username', res.data.user.username);
+                    localStorage.setItem('avatar', res.data.user.avatar);
+                    localStorage.setItem('email', res.data.user.email);
+                   
+                    window.location.href = "/profile";
+
+                   }else{
+                    $("#loader").hide();
+                    $("#btn_login").prop('disabled', false);
+                    swal("Error!", "Los datos que ingresaste están incorrectos", "warning");
+
+                   }
+                }).catch(function(err) {
+                    $("#loader").hide();
+                    $("#btn_login").prop('disabled', false);
+                    swal("Error!", "Los datos que ingresaste están incorrectos", "warning");
+                });
+
+
+
+          
+
+
+
+          }
+  
+  </script>
+
+   
+
+
+
+
+
+</main>

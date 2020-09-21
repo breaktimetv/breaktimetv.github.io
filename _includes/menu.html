@@ -1,0 +1,60 @@
+<aside id="sidebar">
+<nav id="navigation" >
+     <div id="cerrar"  style="padding-top: 10px; text-align:center"> <a href="/"> <img alt="BreakTimeTv" src="/break-min.png"> </a>
+     
+     
+      </div>
+     <hr>
+      <ul>
+          {% assign i = 0 %}
+        {% for link in site.links %}
+
+        {% assign i = i | plus:1 %}
+        {% if i == 1 %}
+            <li style="margin: 10px;"><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}"> <i class='fas fa-film' style="padding-right:10px;"></i> {{ link.title }}</a></li>
+
+        {% endif %}
+        {% if i == 2 %}
+            <li style="margin: 10px;"><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}"> <i class='fas fa-file-video' style="padding-right:10px;"></i> {{ link.title }}</a></li>
+
+        {% endif %}
+        {% if i == 3 %}
+            <li style="margin: 10px;"><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}"> <i class='fas fa-star' style="padding-right:10px;"></i> {{ link.title }}</a></li>
+
+        {% endif %}
+
+        {% if i == 4 %}
+
+            <li style="margin: 10px;"><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}"> <i class='fas fa-file-video' style="padding-right:10px;"></i> {{ link.title }}</a></li>
+
+        {% endif %}
+
+        {% if i == 5 %}
+            <li style="margin: 10px;"><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}"> <i class='fas fa-camera' style="padding-right:10px;"></i> {{ link.title }}</a></li>
+
+        {% endif %}
+     
+
+        {% if i == 6 %}
+            <li style="margin: 10px;"><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}"> <i class='fas fa-balance-scale' style="padding-right:10px;"></i> {{ link.title }}</a></li>
+
+        {% endif %}
+       
+
+        {% if i == 7 %}
+            <li style="margin: 10px;"><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}"> <i class='fas fa-envelope-open-text' style="padding-right:10px;"></i> {{ link.title }}</a></li>
+
+        {% endif %}
+
+        
+         
+ 
+        {% endfor %}
+
+       
+         <li id="paypal-menu" style="margin: 10px;"><a rel="noreferrer" href="https://www.paypal.me/fernando3030/1"> <i class='fab fa-paypal' style="padding-right:10px;"></i> Haz una donación</a></li>
+        
+  
+      </ul>
+    </nav>
+</aside>

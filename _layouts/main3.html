@@ -1,0 +1,133 @@
+---
+layout: compress
+comments: true
+---
+
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="http://schema.org/WebPage">
+    {% include head-post2.html %}
+    <body id="myBody" class="main-page has-push-menu yes-scroll" >
+        
+           
+
+            <input id="url" name="url" type="hidden" value="{{ site.url }}{{ site.baseurl }}{{page.url}}">
+        <div id="loader" class="loader" style="display:none;"></div>
+       
+         
+       
+                    {% include svg-icons.html %}
+                    <div class="header_pc" id="pc">  {% include header2.html %}</div>
+                  
+        
+            <section class="content">
+               
+               
+               
+                {{ content }}
+         
+            </section>
+            <div class="navbar-bottom" id="navbar-abajo" >
+                <div id="menu_abajo" class="row flex-grid">
+
+                                                {% if page.url == "/" %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+                                                                                                <a onclick="mostrar()" style="color: white;" href="{{ site.baseurl }}/"><i class="fas fa-home" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Inicio </p></i></a>
+
+                                                </div>
+                                                {% else %}
+
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+                                                                                <a onclick="mostrar()" href="{{ site.baseurl }}/"><i class="fas fa-home" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Inicio </p></i></a>
+
+                                                </div>
+
+                                                {% endif %}
+
+                                                {% if page.url == "/contenido/" %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+                                                                                                <a onclick="mostrar()" style="color: white;" href="{{ site.baseurl }}/contenido/"><i class="fas fa-compass" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Explorar </p></i></a>
+
+                                                </div>
+                                                {% else %}
+
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+                                                                                <a onclick="mostrar()" href="{{ site.baseurl }}/contenido/"><i class="fas fa-compass" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Explorar </p></i></a>
+
+                                                </div>
+
+                                                {% endif %}
+
+                                                {% if page.url == "/peliculas" %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+                                                                                                 <a onclick="mostrar()" style="color: white;" href="{{ site.url }}{{ site.baseurl }}/peliculas"><i class="fas fa-film" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Peliculas </p></i></a>
+
+                                                </div>
+                                                {% else %}
+
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+                                                                                <a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/peliculas"><i class="fas fa-film" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Peliculas </p></i></a>
+
+                                                 </div>
+
+
+                                                {% endif %}
+
+                                                {% if page.url == "/series" %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+                                                                                                 <a onclick="mostrar()" style="color: white;" href="{{ site.url }}{{ site.baseurl }}/series" ><i class="fas fa-file-video" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Series </p></i></a>
+
+                                                </div>
+                                                {% else %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+                                                                                <a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/series" ><i class="fas fa-file-video" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px" > Series </p></i></a>
+
+                                                </div>
+
+
+                                                {% endif %}
+
+                                                {% if page.url == "/historial" %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+                                                                                                 <a onclick="mostrar()" style="color: white;" href="{{ site.url }}{{ site.baseurl }}/historial" ><i class="fas fa-clock" style="line-height: 1.5;font-size: 18px;"></i><br><p style="font-size:10px"> Historial </p></a>
+
+                                                </div>
+                                                {% else %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+                                                                                <a onclick="mostrar()"  href="{{ site.url }}{{ site.baseurl }}/historial" ><i class="fas fa-clock" style="line-height: 1.5;font-size: 18px;"></i><br><p style="font-size:10px"> Historial </p></a>
+
+                                                </div>
+
+
+                                                {% endif %}
+
+
+                                                {% if page.url == "/informacion" %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+                                                                                                 <a onclick="mostrar()" style="color: white;" href="{{ site.url }}{{ site.baseurl }}/informacion" ><i class="fas fa-bars" style="line-height: 1.5;font-size: 18px;"></i><br> <p style="font-size:10px"> Nosotros</p></a>
+
+                                                </div>
+                                                {% else %}
+                                                <div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+                                                                                <a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/informacion" ><i class="fas fa-bars" style="line-height: 1.5;font-size: 18px;"></i> <br> <p style="font-size:10px"> Nosotros</p></a>
+
+                                                </div>
+
+
+                                                {% endif %}
+
+
+                </div>
+
+            
+                                 
+ </div>
+        {% include footer-post2.html %}
+      
+  
+
+        
+    </body>
+
+   
+
+</html>

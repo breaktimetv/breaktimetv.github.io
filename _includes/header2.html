@@ -1,0 +1,953 @@
+<header class="bar-header" id="header-fixed-1" >
+
+    <div class="container2">
+        <div class="logo">
+                <a  onclick="mostrar()" href="{{ site.baseurl }}/">
+                    <div class="logo_principal"></div>
+                    <span style="display:none">Logo</span>
+                 
+                 </a>
+            </div>
+        <div class="navbar" >
+
+
+
+
+                <div id="pwa" style="text-align: center;padding: 20px;display: none;font-size: 13px;color: rgb(0 0 0);">
+                                           <a id="pwa2" style="    padding: 8px;
+                       background: #cb134a;
+                       float: none;
+                       color: white;
+                       font-weight: bold;
+                       margin-top: 5px;
+                       font-size: 14px;">Instalar APP</a>
+                        
+                     </div>
+
+                {% if page.url == "/peliculas" %}
+
+                <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas" selected >Todos los géneros</option>
+                                                <option style="color:black" value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black" value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black" value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black" value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black" value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black" value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+
+                       {% if page.url == "/peliculas/Terror" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas"  >Todos los géneros</option>
+                                                <option style="color:black" selected value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black" value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black" value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black" value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black" value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black" value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/peliculas/Ciencia-Ficcion" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas"  >Todos los géneros</option>
+                                                <option style="color:black"  value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" selected value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black" value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black" value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black" value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black" value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black" value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+
+                       {% if page.url == "/peliculas/Romance" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas"  >Todos los géneros</option>
+                                                <option style="color:black"  value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black" selected value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black" value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black" value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black" value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black" value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/peliculas/Comedia" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas"  >Todos los géneros</option>
+                                                <option style="color:black"  value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black"  value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black" selected value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black" value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black" value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black" value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/peliculas/Animado" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas"  >Todos los géneros</option>
+                                                <option style="color:black"  value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black"  value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black"  value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black" selected value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black" value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black" value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/peliculas/Erotico" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas"  >Todos los géneros</option>
+                                                <option style="color:black"  value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black"  value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black"  value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black"  value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black" selected value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black" value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/peliculas/Drama" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas"  >Todos los géneros</option>
+                                                <option style="color:black"  value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black"  value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black"  value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black"  value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black"  value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black" selected value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+
+                       {% if page.url == "/peliculas/Accion" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                      
+                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                        <select style="    background: transparent;
+                                        border: none;
+                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                            <option style="color:black" value="/peliculas"  >Todos los géneros</option>
+                                                <option style="color:black"  value="/peliculas/Terror">Terror</option>
+                                                <option style="color:black" value="/peliculas/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                <option style="color:black"  value="/peliculas/Romance">Romance</option>
+                                                <option style="color:black"  value="/peliculas/Comedia">Comedia</option>
+                                                <option style="color:black"  value="/peliculas/Animado">Animado</option>
+                                                <option style="color:black"  value="/peliculas/Erotico">Erótica</option>
+                                                <option style="color:black"  value="/peliculas/Drama">Drama</option>
+                                                <option style="color:black" selected value="/peliculas/Accion">Acción</option>
+                                        </select>
+                            </div>     
+                       </div>
+
+
+                       {% endif %}
+
+
+                       {% if page.url == "/series" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black" selected value="/series">Todos los géneros</option>
+                                                    <option style="color:black" value="/series/Terror">Terror</option>
+                                                    <option style="color:black" value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black" value="/series/Romance">Romance</option>
+                                                    <option style="color:black" value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black" value="/series/Animado">Animado</option>
+                                                    <option style="color:black" value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black" value="/series/Drama">Drama</option>
+                                                    <option style="color:black" value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/series/Terror" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black"  value="/series">Todos los géneros</option>
+                                                    <option style="color:black" selected value="/series/Terror">Terror</option>
+                                                    <option style="color:black" value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black" value="/series/Romance">Romance</option>
+                                                    <option style="color:black" value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black" value="/series/Animado">Animado</option>
+                                                    <option style="color:black" value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black" value="/series/Drama">Drama</option>
+                                                    <option style="color:black" value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/series/Ciencia-Ficcion" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black"  value="/series">Todos los géneros</option>
+                                                    <option style="color:black"  value="/series/Terror">Terror</option>
+                                                    <option style="color:black" selected value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black" value="/series/Romance">Romance</option>
+                                                    <option style="color:black" value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black" value="/series/Animado">Animado</option>
+                                                    <option style="color:black" value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black" value="/series/Drama">Drama</option>
+                                                    <option style="color:black" value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/series/Romance" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black"  value="/series">Todos los géneros</option>
+                                                    <option style="color:black"  value="/series/Terror">Terror</option>
+                                                    <option style="color:black" value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black" selected value="/series/Romance">Romance</option>
+                                                    <option style="color:black" value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black" value="/series/Animado">Animado</option>
+                                                    <option style="color:black" value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black" value="/series/Drama">Drama</option>
+                                                    <option style="color:black" value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/series/Comedia" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black"  value="/series">Todos los géneros</option>
+                                                    <option style="color:black"  value="/series/Terror">Terror</option>
+                                                    <option style="color:black" value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black"  value="/series/Romance">Romance</option>
+                                                    <option style="color:black" selected value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black" value="/series/Animado">Animado</option>
+                                                    <option style="color:black" value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black" value="/series/Drama">Drama</option>
+                                                    <option style="color:black" value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/series/Animado" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black"  value="/series">Todos los géneros</option>
+                                                    <option style="color:black"  value="/series/Terror">Terror</option>
+                                                    <option style="color:black" value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black"  value="/series/Romance">Romance</option>
+                                                    <option style="color:black"  value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black" selected value="/series/Animado">Animado</option>
+                                                    <option style="color:black" value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black" value="/series/Drama">Drama</option>
+                                                    <option style="color:black" value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/series/Erotico" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black"  value="/series">Todos los géneros</option>
+                                                    <option style="color:black"  value="/series/Terror">Terror</option>
+                                                    <option style="color:black" value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black"  value="/series/Romance">Romance</option>
+                                                    <option style="color:black"  value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black"  value="/series/Animado">Animado</option>
+                                                    <option style="color:black" selected value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black" value="/series/Drama">Drama</option>
+                                                    <option style="color:black" value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/series/Drama" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black"  value="/series">Todos los géneros</option>
+                                                    <option style="color:black"  value="/series/Terror">Terror</option>
+                                                    <option style="color:black" value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black"  value="/series/Romance">Romance</option>
+                                                    <option style="color:black"  value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black"  value="/series/Animado">Animado</option>
+                                                    <option style="color:black"  value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black" selected value="/series/Drama">Drama</option>
+                                                    <option style="color:black" value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+                       {% if page.url == "/series/Accion" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                          
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option style="color:black"  value="/series">Todos los géneros</option>
+                                                    <option style="color:black"  value="/series/Terror">Terror</option>
+                                                    <option style="color:black" value="/series/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black"  value="/series/Romance">Romance</option>
+                                                    <option style="color:black"  value="/series/Comedia">Comedia</option>
+                                                    <option style="color:black"  value="/series/Animado">Animado</option>
+                                                    <option style="color:black"  value="/series/Erotico">Erótica</option>
+                                                    <option style="color:black"  value="/series/Drama">Drama</option>
+                                                    <option style="color:black" selected value="/series/Accion">Acción</option>
+                                            </select>
+                                </div>     
+                           </div>
+
+
+                       {% endif %}
+
+
+
+                       {% if page.url == "/netflix" %}
+
+                       <div class="row" style="display:none" id="filtros">
+                           
+                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                       
+                                            <select style="    background: transparent;
+                                            border: none;
+                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                <option  style="color:black" selected value="/netflix">Todos los géneros</option>
+                                                    <option style="color:black" value="/netflix/Terror">Terror</option>
+                                                    <option style="color:black" value="/netflix/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                    <option style="color:black" value="/netflix/Romance">Romance</option>
+                                                    <option style="color:black" value="/netflix/Comedia">Comedia</option>
+                                                    <option style="color:black" value="/netflix/Animado">Animado</option>
+                                                    <option style="color:black" value="/netflix/Drama">Drama</option>
+                                                    <option style="color:black" value="/netflix/Accion">Acción</option>
+                                                    
+                                            </select>
+                                </div>     
+                           </div>
+
+                           {% endif %}
+
+                           {% if page.url == "/netflix/Terror" %}
+
+                           <div class="row" style="display:none" id="filtros">
+                               
+                                    <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                           
+                                                <select style="    background: transparent;
+                                                border: none;
+                                                color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                    <option  style="color:black"  value="/netflix">Todos los géneros</option>
+                                                        <option style="color:black" selected value="/netflix/Terror">Terror</option>
+                                                        <option style="color:black" value="/netflix/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                        <option style="color:black" value="/netflix/Romance">Romance</option>
+                                                        <option style="color:black" value="/netflix/Comedia">Comedia</option>
+                                                        <option style="color:black" value="/netflix/Animado">Animado</option>
+                                                        <option style="color:black" value="/netflix/Drama">Drama</option>
+                                                        <option style="color:black" value="/netflix/Accion">Acción</option>
+                                                        
+                                                </select>
+                                    </div>     
+                               </div>
+    
+                               {% endif %}
+
+                               {% if page.url == "/netflix/Ciencia-Ficcion" %}
+
+                               <div class="row" style="display:none" id="filtros">
+                                   
+                                        <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                               
+                                                    <select style="    background: transparent;
+                                                    border: none;
+                                                    color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                        <option  style="color:black"  value="/netflix">Todos los géneros</option>
+                                                            <option style="color:black"  value="/netflix/Terror">Terror</option>
+                                                            <option style="color:black" selected value="/netflix/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                            <option style="color:black" value="/netflix/Romance">Romance</option>
+                                                            <option style="color:black" value="/netflix/Comedia">Comedia</option>
+                                                            <option style="color:black" value="/netflix/Animado">Animado</option>
+                                                            <option style="color:black" value="/netflix/Drama">Drama</option>
+                                                            <option style="color:black" value="/netflix/Accion">Acción</option>
+                                                            
+                                                    </select>
+                                        </div>     
+                                   </div>
+        
+                                   {% endif %}
+
+                                   {% if page.url == "/netflix/Romance" %}
+
+                                   <div class="row" style="display:none" id="filtros">
+                                       
+                                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                   
+                                                        <select style="    background: transparent;
+                                                        border: none;
+                                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                            <option  style="color:black"  value="/netflix">Todos los géneros</option>
+                                                                <option style="color:black"  value="/netflix/Terror">Terror</option>
+                                                                <option style="color:black" value="/netflix/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                <option style="color:black" selected value="/netflix/Romance">Romance</option>
+                                                                <option style="color:black" value="/netflix/Comedia">Comedia</option>
+                                                                <option style="color:black" value="/netflix/Animado">Animado</option>
+                                                                <option style="color:black" value="/netflix/Drama">Drama</option>
+                                                                <option style="color:black" value="/netflix/Accion">Acción</option>
+                                                                
+                                                        </select>
+                                            </div>     
+                                       </div>
+            
+                                       {% endif %}
+
+                                       {% if page.url == "/netflix/Comedia" %}
+
+                                       <div class="row" style="display:none" id="filtros">
+                                           
+                                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                       
+                                                            <select style="    background: transparent;
+                                                            border: none;
+                                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                <option  style="color:black"  value="/netflix">Todos los géneros</option>
+                                                                    <option style="color:black"  value="/netflix/Terror">Terror</option>
+                                                                    <option style="color:black" value="/netflix/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                    <option style="color:black"  value="/netflix/Romance">Romance</option>
+                                                                    <option style="color:black" selected value="/netflix/Comedia">Comedia</option>
+                                                                    <option style="color:black" value="/netflix/Animado">Animado</option>
+                                                                    <option style="color:black" value="/netflix/Drama">Drama</option>
+                                                                    <option style="color:black" value="/netflix/Accion">Acción</option>
+                                                                    
+                                                            </select>
+                                                </div>     
+                                           </div>
+                
+                                           {% endif %}
+
+                                           {% if page.url == "/netflix/Animado" %}
+
+                                           <div class="row" style="display:none" id="filtros">
+                                               
+                                                    <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                           
+                                                                <select style="    background: transparent;
+                                                                border: none;
+                                                                color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                    <option  style="color:black"  value="/netflix">Todos los géneros</option>
+                                                                        <option style="color:black"  value="/netflix/Terror">Terror</option>
+                                                                        <option style="color:black" value="/netflix/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                        <option style="color:black"  value="/netflix/Romance">Romance</option>
+                                                                        <option style="color:black"  value="/netflix/Comedia">Comedia</option>
+                                                                        <option style="color:black" selected value="/netflix/Animado">Animado</option>
+                                                                        <option style="color:black" value="/netflix/Drama">Drama</option>
+                                                                        <option style="color:black" value="/netflix/Accion">Acción</option>
+                                                                        
+                                                                </select>
+                                                    </div>     
+                                               </div>
+                    
+                                               {% endif %}
+
+                                               {% if page.url == "/netflix/Drama" %}
+
+                                               <div class="row" style="display:none" id="filtros">
+                                                   
+                                                        <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                               
+                                                                    <select style="    background: transparent;
+                                                                    border: none;
+                                                                    color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                        <option  style="color:black"  value="/netflix">Todos los géneros</option>
+                                                                            <option style="color:black"  value="/netflix/Terror">Terror</option>
+                                                                            <option style="color:black" value="/netflix/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                            <option style="color:black"  value="/netflix/Romance">Romance</option>
+                                                                            <option style="color:black"  value="/netflix/Comedia">Comedia</option>
+                                                                            <option style="color:black"  value="/netflix/Animado">Animado</option>
+                                                                            <option style="color:black" selected value="/netflix/Drama">Drama</option>
+                                                                            <option style="color:black" value="/netflix/Accion">Acción</option>
+                                                                            
+                                                                    </select>
+                                                        </div>     
+                                                   </div>
+                        
+                                                   {% endif %}
+
+                                                   {% if page.url == "/netflix/Accion" %}
+
+                                                   <div class="row" style="display:none" id="filtros">
+                                                       
+                                                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                                   
+                                                                        <select style="    background: transparent;
+                                                                        border: none;
+                                                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                            <option  style="color:black"  value="/netflix">Todos los géneros</option>
+                                                                                <option style="color:black"  value="/netflix/Terror">Terror</option>
+                                                                                <option style="color:black" value="/netflix/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                                <option style="color:black"  value="/netflix/Romance">Romance</option>
+                                                                                <option style="color:black"  value="/netflix/Comedia">Comedia</option>
+                                                                                <option style="color:black"  value="/netflix/Animado">Animado</option>
+                                                                                <option style="color:black"  value="/netflix/Drama">Drama</option>
+                                                                                <option style="color:black" selected value="/netflix/Accion">Acción</option>
+                                                                                
+                                                                        </select>
+                                                            </div>     
+                                                       </div>
+                            
+                                                       {% endif %}
+
+                 
+
+                               {% if page.url == "/todos/Terror" %}
+
+                               <div class="row" style="display:none" id="filtros">
+                                   
+                                        <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                               
+                                                    <select style="    background: transparent;
+                                                    border: none;
+                                                    color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                        <option  style="color:black" disabled  value="">Seleccione un género</option>
+                                                            <option style="color:black" selected value="/todos/Terror">Terror</option>
+                                                            <option style="color:black" value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                            <option style="color:black" value="/todos/Romance">Romance</option>
+                                                            <option style="color:black" value="/todos/Comedia">Comedia</option>
+                                                            <option style="color:black" value="/todos/Animado">Animado</option>
+                                                            <option style="color:black" value="/todos/Drama">Drama</option>
+                                                            <option style="color:black" value="/todos/Accion">Acción</option>
+                                                            <option style="color:black" value="/todos/Erotico">Erótica</option>
+                                                    </select>
+                                        </div>     
+                                   </div>
+        
+                                   {% endif %}
+
+                                   {% if page.url == "/todos/Ciencia-Ficcion" %}
+
+                               <div class="row" style="display:none" id="filtros">
+                                   
+                                        <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                               
+                                                    <select style="    background: transparent;
+                                                    border: none;
+                                                    color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                        <option  style="color:black" disabled  value="">Seleccione un género</option>
+                                                            <option style="color:black"  value="/todos/Terror">Terror</option>
+                                                            <option style="color:black" selected value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                            <option style="color:black" value="/todos/Romance">Romance</option>
+                                                            <option style="color:black" value="/todos/Comedia">Comedia</option>
+                                                            <option style="color:black" value="/todos/Animado">Animado</option>
+                                                            <option style="color:black" value="/todos/Drama">Drama</option>
+                                                            <option style="color:black" value="/todos/Accion">Acción</option>
+                                                            <option style="color:black" value="/todos/Erotico">Erótica</option>
+                                                    </select>
+                                        </div>     
+                                   </div>
+        
+                                   {% endif %}
+
+
+                                   {% if page.url == "/todos/Romance" %}
+
+                                   <div class="row" style="display:none" id="filtros">
+                                       
+                                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                   
+                                                        <select style="    background: transparent;
+                                                        border: none;
+                                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                            <option  style="color:black" disabled  value="">Seleccione un género</option>
+                                                                <option style="color:black"  value="/todos/Terror">Terror</option>
+                                                                <option style="color:black" value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                <option style="color:black" selected value="/todos/Romance">Romance</option>
+                                                                <option style="color:black" value="/todos/Comedia">Comedia</option>
+                                                                <option style="color:black" value="/todos/Animado">Animado</option>
+                                                                <option style="color:black" value="/todos/Drama">Drama</option>
+                                                                <option style="color:black" value="/todos/Accion">Acción</option>
+                                                                <option style="color:black" value="/todos/Erotico">Erótica</option>
+                                                        </select>
+                                            </div>     
+                                       </div>
+            
+                                       {% endif %}
+
+                                       {% if page.url == "/todos/Comedia" %}
+
+                                       <div class="row" style="display:none" id="filtros">
+                                           
+                                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                       
+                                                            <select style="    background: transparent;
+                                                            border: none;
+                                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                <option  style="color:black" disabled  value="">Seleccione un género</option>
+                                                                    <option style="color:black"  value="/todos/Terror">Terror</option>
+                                                                    <option style="color:black" value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                    <option style="color:black"  value="/todos/Romance">Romance</option>
+                                                                    <option style="color:black" selected value="/todos/Comedia">Comedia</option>
+                                                                    <option style="color:black" value="/todos/Animado">Animado</option>
+                                                                    <option style="color:black" value="/todos/Drama">Drama</option>
+                                                                    <option style="color:black" value="/todos/Accion">Acción</option>
+                                                                    <option style="color:black" value="/todos/Erotico">Erótica</option>
+                                                            </select>
+                                                </div>     
+                                           </div>
+                
+                                           {% endif %}
+
+                                           {% if page.url == "/todos/Animado" %}
+
+                                           <div class="row" style="display:none" id="filtros">
+                                               
+                                                    <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                           
+                                                                <select style="    background: transparent;
+                                                                border: none;
+                                                                color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                    <option  style="color:black" disabled  value="">Seleccione un género</option>
+                                                                        <option style="color:black"  value="/todos/Terror">Terror</option>
+                                                                        <option style="color:black" value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                        <option style="color:black"  value="/todos/Romance">Romance</option>
+                                                                        <option style="color:black"  value="/todos/Comedia">Comedia</option>
+                                                                        <option style="color:black" selected value="/todos/Animado">Animado</option>
+                                                                        <option style="color:black" value="/todos/Drama">Drama</option>
+                                                                        <option style="color:black" value="/todos/Accion">Acción</option>
+                                                                        <option style="color:black" value="/todos/Erotico">Erótica</option>
+                                                                </select>
+                                                    </div>     
+                                               </div>
+                    
+                                               {% endif %}
+
+                                               {% if page.url == "/todos/Drama" %}
+
+                                           <div class="row" style="display:none" id="filtros">
+                                               
+                                                    <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                           
+                                                                <select style="    background: transparent;
+                                                                border: none;
+                                                                color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                    <option  style="color:black" disabled  value="">Seleccione un género</option>
+                                                                        <option style="color:black"  value="/todos/Terror">Terror</option>
+                                                                        <option style="color:black" value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                        <option style="color:black"  value="/todos/Romance">Romance</option>
+                                                                        <option style="color:black"  value="/todos/Comedia">Comedia</option>
+                                                                        <option style="color:black"  value="/todos/Animado">Animado</option>
+                                                                        <option style="color:black" selected value="/todos/Drama">Drama</option>
+                                                                        <option style="color:black" value="/todos/Accion">Acción</option>
+                                                                        <option style="color:black" value="/todos/Erotico">Erótica</option>
+                                                                </select>
+                                                    </div>     
+                                               </div>
+                    
+                                               {% endif %}
+
+                                               {% if page.url == "/todos/Accion" %}
+
+                                               <div class="row" style="display:none" id="filtros">
+                                                   
+                                                        <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                               
+                                                                    <select style="    background: transparent;
+                                                                    border: none;
+                                                                    color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                        <option  style="color:black" disabled  value="">Seleccione un género</option>
+                                                                            <option style="color:black"  value="/todos/Terror">Terror</option>
+                                                                            <option style="color:black" value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                            <option style="color:black"  value="/todos/Romance">Romance</option>
+                                                                            <option style="color:black"  value="/todos/Comedia">Comedia</option>
+                                                                            <option style="color:black"  value="/todos/Animado">Animado</option>
+                                                                            <option style="color:black"  value="/todos/Drama">Drama</option>
+                                                                            <option style="color:black" selected value="/todos/Accion">Acción</option>
+                                                                            <option style="color:black" value="/todos/Erotico">Erótica</option>
+                                                                    </select>
+                                                        </div>     
+                                                   </div>
+                        
+                                                   {% endif %}
+
+                                                   {% if page.url == "/todos/Erotico" %}
+
+                                                   <div class="row" style="display:none" id="filtros">
+                                                       
+                                                            <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                                   
+                                                                        <select style="    background: transparent;
+                                                                        border: none;
+                                                                        color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                            <option  style="color:black" disabled  value="">Seleccione un género</option>
+                                                                                <option style="color:black"  value="/todos/Terror">Terror</option>
+                                                                                <option style="color:black" value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                                <option style="color:black"  value="/todos/Romance">Romance</option>
+                                                                                <option style="color:black"  value="/todos/Comedia">Comedia</option>
+                                                                                <option style="color:black"  value="/todos/Animado">Animado</option>
+                                                                                <option style="color:black"  value="/todos/Drama">Drama</option>
+                                                                                <option style="color:black"  value="/todos/Accion">Acción</option>
+                                                                                <option style="color:black" selected value="/todos/Erotico">Erótica</option>
+                                                                        </select>
+                                                            </div>     
+                                                       </div>
+                            
+                                                       {% endif %}
+
+                                                       {% if page.url == "/" %}
+
+                                                       <div class="row" style="display:none" id="filtros">
+                                                           
+                                                                <div class="form-group" style="padding: 10px 5px 0px 5px;margin-bottom: 0px;">  
+                                                                       
+                                                                            <select style="    background: transparent;
+                                                                            border: none;
+                                                                            color: white;    box-shadow: none;" name="contenido_filtro" id="contenido_filtro" class="form-control">
+                                                                                <option  style="color:black" selected disabled  value="">Seleccione un género</option>
+                                                                                    <option style="color:black"  value="/todos/Terror">Terror</option>
+                                                                                    <option style="color:black" value="/todos/Ciencia-Ficcion">Ciencia Ficción</option>
+                                                                                    <option style="color:black"  value="/todos/Romance">Romance</option>
+                                                                                    <option style="color:black"  value="/todos/Comedia">Comedia</option>
+                                                                                    <option style="color:black"  value="/todos/Animado">Animado</option>
+                                                                                    <option style="color:black"  value="/todos/Drama">Drama</option>
+                                                                                    <option style="color:black"  value="/todos/Accion">Acción</option>
+                                                                                    <option style="color:black"  value="/todos/Erotico">Erótica</option>
+                                                                            </select>
+                                                                </div>     
+                                                           </div>
+                                
+                                                           {% endif %}
+    
+
+        
+        <ul id="menucito">
+            <li><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/"> <i class='fas fa-home' style="    color: #cb134a;"></i> INICIO</a></li>
+                <li><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/contenido/"> <i class='fas fa-compass' style="    color: #cb134a;"></i> EXPLORAR</a></li>
+                <li><a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/historial"> <i class='fas fa-clock' style="    color: #cb134a;"></i> MI HISTORIAL</a></li>
+                <li><a onclick="mostrar()" rel="noreferrer" href="https://www.paypal.me/fernando3030/1"> <i class='fab fa-paypal' style="    color: #cb134a;"></i> Donación</a></li>
+
+        </ul>
+        
+        </div>
+
+
+
+           
+
+        <a id="search" href="#buscar" class="dosearch">
+                <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+                <span style="display:none">icon</span>
+            </a>
+
+            <!--
+
+
+           
+
+            <div class="dropdown">
+                    <button style="    background: none;    border: 0;padding: 0;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+                            <img id="avatar" title="Mi Perfil" src="https://firebasestorage.googleapis.com/v0/b/breaktimetv-2c832.appspot.com/o/profile%2Favatar-min.jpg?alt=media&token=dc41d0f9-91c5-44cf-a024-2eecc464d981" alt="Avatar" style="width: 40px;height: 40px;border-radius: 50%;margin: 7px 10px 0px 0px;cursor: pointer;">
+                    </button>
+                    <div class="dropdown-menu">
+
+                        <div class="row" style="    margin-top: 15px;margin-bottom: 15px;" align="center" id="no_logeado">
+
+                                <a style="cursor: pointer;padding:10px;background:#cb134a;    color: white;font-weight: bold;" onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/registro">Crear Cuenta</a>
+                               <a style="cursor: pointer; padding:10px;background:#cb134a;    font-weight: bold;color: white;" onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/login">Iniciar sesión</a>
+
+
+                        </div>
+
+                        <div align="center" id="logeado" style="    margin-top: 5px;margin-bottom: 15px;display:none">
+
+                                <img id="avatar2" title="Mi foto" src="" alt="Avatar" style="width: 40px;height: 40px;border-radius: 50%;    margin-bottom: 5px;cursor: pointer;">
+                                <p id="username_menu" style="font-weight: bold; font-size:12px; color:black"></p>
+                                <p id="email_menu" style="font-size:12px; color:black"></p>
+                                <hr style="    margin-top: 10px;">
+                                <a id="cerrar_sesion" onclick="mostrar()" style="    color: white;cursor: pointer;padding:10px;background:#cb134a" >Cerrar sesión</a>
+                        </div>
+
+                      
+
+                        
+                      
+                     
+                    </div>
+                  </div>
+
+          -->
+      
+
+
+         
+    
+
+
+    </div>
+
+  
+</header>
+
+
+{% include search.html %}
+
+
+
+
+
+

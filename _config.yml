@@ -1,0 +1,273 @@
+# Site Settings
+title: BreakTimeTV
+email: breaktime3030@gmail.com
+description: Sitio Web para ver peliculas y series online gratis.
+baseurl: ""
+url: https://breaktimetv.github.io
+# Google Analytics
+google_analytics: UA-148084448-1
+
+# User Settings
+username: BreakTimeTv
+user_description: Página dedicada a videos sin publicidad.
+disqus_username: BreakTimeTV
+
+# Social Media
+# Remove the item if you don't need it
+github_username: 
+facebook_username: breaktimetv
+twitter_username: 
+instagram_username: _breaktimetv
+linkedin_username: 
+medium_username: 
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+include: [".well-known"]
+
+
+# Plugins
+plugins:
+  - jemoji
+  - jekyll-random
+  - jekyll-seo-tag
+
+plugins: [jekyll-paginate]
+
+
+paginate: 48
+paginate_path: /contenido/page:num/
+
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Aviso Legal
+    url: /aviso-legal
+  - title: Envíanos Tus Pedidos
+    url: /contact
+ 
+
+
+
+# Exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
+
+
+collections:
+  the-defenders-Latino-temporada-1:
+    output: true
+  elite:
+    output: true
+  the-protector-temporada-1:
+    output: true
+  narcos-mexico-temporada-1:
+    output: true
+  you:
+    output: true
+  the-stranger-things-temporada-1:
+    output: true
+  the-stranger-things-temporada-2:
+    output: true
+  the-punisher-temporada-1:
+    output: true
+  the-punisher-temporada-2:
+    output: true
+  13-reasons-why:
+    output: true
+  american-gods-temporada-1:
+    output: true
+  american-gods-temporada-2:
+    output: true
+  la-casa-de-papel:
+    output: true
+  luis-miguel-temporada-1:
+    output: true
+  deception-temporada-1:
+    output: true
+  westworld:
+    output: true
+  britannia-temporada-1:
+    output: true
+  britannia-temporada-2:
+    output: true
+  jack-ryan-temporada-1:
+    output: true
+  mr-robot-temporada-1:
+    output: true
+  mr-robot-temporada-2:
+    output: true
+  mr-robot-temporada-3:
+    output: true
+  mr-robot-temporada-4:
+    output: true
+  dark:
+    output: true
+  the-good-doctor:
+    output: true
+  black-mirror-temporada-1:
+    output: true
+  black-mirror-temporada-2:
+    output: true
+  black-mirror-temporada-3:
+    output: true
+  black-mirror-temporada-4:
+    output: true
+  black-mirror-temporada-5:
+    output: true
+  the-end-of-the-fucking-world-temporada-1:
+    output: true
+  the-end-of-the-fucking-world-2:
+    output: true
+  club-de-cuervos-temporada-1:
+    output: true
+  rick-y-morty:
+    output: true
+  la-reina-del-flow-temporada-1:
+    output: true
+  chernobyl-temporada-1:
+    output: true
+  the-society-temporada-1:
+    output: true
+  el-perfume-temporada-1:
+    output: true
+  final-space-temporada-1:
+    output: true 
+  drake-y-josh-temporada-1:
+    output: true
+  drake-y-josh-temporada-2:
+    output: true 
+  drake-y-josh-temporada-3:
+    output: true 
+  drake-y-josh-temporada-4:
+    output: true 
+  the-big-bang-theory-temporada-1:
+    output: true
+  the-stranger-things-temporada-3:
+    output: true
+  euphoria:
+    output: true
+  doom-patrol:
+    output: true
+  caballeros-del-zodiaco-saint-seiya:
+    output: true
+  la-cosa-del-pantano-2019-temporada-1:
+    output: true
+  the-big-bang-theory-temporada-2:
+    output: true
+  the-boys:
+    output: true
+  pretty-little-liars-2019-temporada-1:
+    output: true
+  instinto:
+    output: true
+  oscuro-deseo:
+    output: true
+  riverdale:
+    output: true
+  iron-fist-temporada-1:
+    output: true
+  iron-fist-temporada-2:
+    output: true
+  sex-education:
+    output: true
+  luke-cage-temporada-1:
+    output: true
+  titans-temporada-1:
+    output: true
+  titans-temporada-2:
+    output: true
+  juego-de-tronos:
+    output: true
+  marianne-temporada-1:
+    output: true
+  la-purga-temporada-1:
+    output: true
+  la-purga-temporada-2:
+    output: true
+  la-casa-de-las-flores:
+    output: true
+  creepshow:
+    output: true
+  american-horror-story-temporada-9:
+    output: true
+  the-act-temporada-1:
+    output: true
+  supergirl:
+    output: true
+  the-walking-dead:
+    output: true
+  batwoman:
+    output: true
+  flash:
+    output: true
+  arrow:
+    output: true
+  el-joven-sheldon:
+    output: true
+  lucifer:
+    output: true
+  watchmen-temporada-1:
+    output: true
+  the-umbrella-academy:
+    output: true
+  daybreak-temporada-1:
+    output: true
+  desencanto-temporada-1:
+    output: true
+  le-temes-a-la-oscuridad:
+    output: true
+  de-viaje-con-los-derbez:
+    output: true
+  the-mandalorian:
+    output: true
+  insaciable-temporada-1:
+    output: true
+  insaciable-temporada-2:
+    output: true
+  quicksand-temporada-1:
+    output: true
+  see-temporada-1:
+    output: true
+  sabrina:
+    output: true
+  the-witcher:
+    output: true
+  orange-is-the-new-black-temporada-4:
+    output: true
+  dracula:
+    output: true
+  la-maldicion-de-hill-house:
+    output: true
+  mesias-temporada-1:
+    output: true
+  vikingos:
+    output: true
+  legends-of-tomorrow:
+    output: true
+  after-life:
+    output: true
+  matchday-inside-fc-barcelona:
+    output: true
+  ragnarok:
+    output: true
+  father-is-strange:
+    output: true
+  esta-mierda-me-supera:
+    output: true
+  sherlock:
+    output: true
+  vis-a-vis-el-oasis:
+    output: true
+  yo-nunca:
+    output: true
+  a-tres-metros-sobre-el-cielo:
+    output: true
+  stargirl:
+    output: true
+  control-z:
+    output: true
+  

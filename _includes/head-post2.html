@@ -1,0 +1,218 @@
+<head data-cast-api-enabled="true">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#000" />
+    <meta name="keywords" content="peliculas online, peliculas gratis, series online, series gratis, ver peliculas online, ver series online, peliculas y series 2018" />
+    <meta property="og:type" content="website"/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000"/>
+    <style>
+    .iframe-loading { 
+    background:url('https://res.cloudinary.com/dmsdzouoo/image/upload/v1569027589/ezgif.com-optimize-final_ns8mog.gif') center center no-repeat; 
+}
+    </style>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="BreakTimeTv"/>
+    <meta name="google-site-verification" content="IcoRfASJcsqIS85BLXpPLXVrColB6pzX18wtNURRc0Q" />
+    <title> {{ page.title }}</title>
+    
+    <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{site.twitter_username}}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.username }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.image_banner %}
+    <meta property="twitter:image:src" content="{{ page.image_banner }}">
+    {% else %}
+    <meta property="twitter:image:src" content="{{  page.image_banner  | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.username }}{% else %}{{ site.title }}{% endif %}">
+    {% if page.image_banner %}
+    <meta property="og:image" content="{{ page.image_banner }}">
+    
+    {% else %}
+    <meta property="og:image" content="{{ page.image_banner | prepend: site.baseurl | prepend: site.url }}">
+     
+    {% endif %}
+     <meta property="og:image:type" content="image/jpg"/>
+    <meta property="og:image:width" content="800"/>
+    <meta property="og:image:height" content="400"/>
+    <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="es_EC"/>
+    <meta property="fb:app_id"       content="491895904626108" />
+
+    <!-- Social: Google+ / Schema.org  -->
+    <meta itemprop="name" content="{% if page.title %}{{ page.title }} | {{ site.username }}{% else %}{{ site.title }}{% endif %}"/>
+    <meta itemprop="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta itemprop="image" content="{{ page.image_banner | prepend: site.baseurl | prepend: site.url }}"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{site.baseurl}}/icon-min2.png" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="{{site.baseurl}}/icon-min2.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{site.baseurl}}/57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{site.baseurl}}/72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{site.baseurl}}/114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{site.baseurl}}/144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="{{site.baseurl}}/60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{site.baseurl}}/120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{site.baseurl}}/76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{site.baseurl}}/152.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{site.baseurl}}/192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{site.baseurl}}/96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{site.baseurl}}/16.png">
+    <link rel="manifest" href="/manifest.json">
+
+
+
+
+     <link rel="stylesheet" href="/assets/css/medile.css">
+
+    <link rel="stylesheet" href="/assets/css/sweetalert.css">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="/assets/css/tooltipster.bundle.min.css">
+    
+    <link rel="stylesheet" href="/assets/css/tooltipster-sideTip-punk.min.css">
+   <style type="text/css">
+            .toggle{display:block;background-color:#888;height:30px;line-height:30px;overflow:hidden;margin:10px auto 0;text-align:center;border-radius:3px;color:#fff;cursor:pointer}
+            .toggle .icons{width:20px;height:20px;vertical-align:middle;fill:#000;margin-right:15px}
+            #snackbar1 {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar1.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+#snackbar2 {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar2.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+    
+    
+    
+    
+    </style>
+
+
+ 
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="{{ site.username }}">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    <meta name="msapplication-TileImage" content="{{site.baseurl}}/152.png"/>
+    <meta name="msapplication-TileColor" content="#000000"/>
+
+    <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#cb134a">
+
+
+  
+    
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/assets/css/flexboxgrid.min.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <script src="/assets/js/jquery-3.4.1.min2.js"></script>
+    <script  src="/assets/js/jquery-latest.min2.js"></script>
+    <script>
+
+
+  
+
+    </script>
+    {% if site.google_analytics and jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
+
+        
+<script type="text/javascript">var submitted=false;</script>
+
+
+
+
+
+
+    
+
+
+
+</head>

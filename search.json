@@ -1,0 +1,18 @@
+---
+---
+[
+  {% for post in site.posts %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "tags"     : "{{ post.tags | array_to_sentence_string }}",
+      "categories" : "{{ post.category }}",
+      "calidad": "{{ post.calidad }}",
+      "image" : "{{ post.image_carousel }}",
+      "anio" : "{{ post.anio }}",
+      "clasificacion" : "{{ post.clasificacion }}",
+      "duracion" : "{{ post.duracion }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date | date: '%m/%d/%Y'}}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

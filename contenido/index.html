@@ -1,0 +1,214 @@
+---
+layout: main2
+paginate:
+    root: /contenido/
+    limit: false
+    page_amount: 7
+    title_label: Pagination
+title: "Peliculas y series más recientes"
+---
+
+<main class="home" id="post" role="main" style="padding-top: 60px;"  itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    <div cold-md="12" align="center">
+       <h2 class="top_h3"> Peliculas y Series más actuales </h2>
+   </div>
+   <div id="grid" class="row flex-grid">
+        <div class="col-12 col-md-1 col-lg-1">
+
+			
+			</div>
+
+			<div  id="grid" class="col-12 col-md-10 col-lg-10" style="padding: 0;">
+
+        {% for post in paginator.posts %}
+                <article class="box-item col-xs-4 col-sm-2 col-md-2 col-lg-2" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+                    <div class="box">
+                    <div class="box-body">
+                        {% if post.image_carousel %}
+                            <div class="cover">
+                                <a  onclick="mostrar()" href="{{ post.url | prepend: site.baseurl }}">
+                                <img title="{{ post.title }}" src="../../assets/img/placeholder-min.png" data-url="{{ post.image_carousel }}" class="preload tooltipster">
+                                </a>
+                                {% if post.category == 'series' %}
+                                    <div class="series"> Serie </div>
+                                    {% else %}
+                                    <div class="peliculas"> Pelicula </div>
+                                    {% endif %}
+                                    {% if post.idioma == 'Latino' %}
+
+                                            <div class="latino" title="Audio Latino"></div>
+
+
+                                    {% else %}
+                                            {% if post.idioma == 'Castellano' %}
+
+                                            <div class="castellano" title="Audio Castellano"></div>
+
+                                            {% else %}
+                                            {% if post.idioma == 'Latino/Castellano' %}
+                                            <div class="latino-castellano" title="Audio Latino y Castellano"></div>
+                                            {% else %}
+
+                                            {% if post.idioma == 'Latino/Castellano/Subtitulado' %}
+                                            <div class="latino-castellano-subtitulado" title="Audio Latino, Castellano y Subtitulado"></div>
+                                            {% else %}
+
+                                            {% if post.idioma == 'Latino/Subtitulado' %}
+                                            <div class="latino-subtitulado" title="Audio Latino y Subtitulado"></div>
+                                            {% else %}
+
+                                            {% if post.idioma == 'Castellano/Subtitulado' %}
+                                            <div class="castellano-subtitulado" title="Audio Castellano y Subtitulado"></div>
+                                            {% else %}
+
+                                            <div class="subtitulado" title="Audio Subtitulado"></div>
+
+                                            {% endif %}
+
+                                            {% endif %}
+                                            {% endif %}
+
+                                            {% endif %}
+                                            {% endif %}
+
+                                        {% endif %}
+                                <div class="titulo"> {{ post.calidad }} </div>
+                            </div>
+                        {% endif %}
+                        <div class="box-info">
+                            <div class="w3l-movie-text">
+                                <h6>
+                                    <a onclick="mostrar()" title="{{ post.title }}"  class="post-link tooltipster" href="{{ post.url | prepend: site.baseurl }}">
+                                            {{ post.title }}
+                                    </a>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+        </article>
+         {% endfor %}
+
+    </div>
+
+         <div class="col-12 col-md-1 col-lg-1">
+
+			
+			</div>
+
+   
+   </div>
+
+   {% assign paginator_title = 'Pagination' %}
+   {% if page.paginate.title_label %}
+   {% assign paginator_title = page.paginate.title_label %}
+   {% endif %}
+   
+   {% assign page_amount = 7 %}
+   {% if page.paginate.page_amount %}
+   {% assign page_amount = page.paginate.page_amount %}
+   {% endif %}
+   
+   {% assign page_amountmin = page_amount | minus: 2 %}
+   {% assign offset = page_amountmin | divided_by: 2 %}
+   {% assign page_amountprev = paginator.page | minus: offset %}
+   {% assign page_amountnext = paginator.page | plus: offset %}
+   {% assign totalpages = paginator.total_pages %}
+   
+   {% if page_amountprev <= 1 %}
+   {% assign page_amountprevfix = page_amountprev | minus: 1 %}
+   {% assign page_amountprev = 0 %}
+   {% assign page_amountnext = page_amountnext | minus: page_amountprevfix | plus: 1 %}
+   {% endif %}
+   
+   {% if page_amountnext >= totalpages %}
+   {% assign page_amountnextfix = totalpages | minus: page_amountnext | minus: 1 %}
+   {% assign page_amountnext = totalpages %}
+   {% assign page_amountprev = page_amountprev | plus: page_amountnextfix %}
+   {% endif %}
+   
+   {% assign dots_prev = page_amountprev | minus: 1 %}
+   {% assign dots_next = totalpages | minus: 1 %}
+   {% assign max_next = totalpages | minus: offset | minus: 1 %}
+   
+   {% if totalpages > page_amount %}
+   {% for count in (2..paginator.total_pages) %}
+   {% if count == dots_prev  %}
+   {% assign indicator_first = ' pages-indicator--active' %}
+   {% endif %}
+   {% if count == dots_next and paginator.page < max_next %}
+   {% assign indicator_last = ' pages-indicator--active' %}
+   {% endif %}
+   {% if forloop.first %}
+   {% assign relative_first = paginator.page | minus: forloop.index | divided_by: 1 %}
+   {% endif %}
+   {% if forloop.last %}
+   {% assign relative_last = paginator.page | minus: forloop.index | replace: '-', '' | divided_by: 1 | plus: 1 %}
+   {% endif %}
+   {% endfor %}
+   {% endif %}
+   
+  <div align="center">
+   
+   <ul class="pagination" role="navigation" aria-labelledby="pagination-label">
+   
+       {% if paginator.previous_page %}
+       <li class="previous">
+           {% if paginator.previous_page == 1 %}
+           <a class="pagination-item" style="font-size: 17px;" onclick="mostrar()" title="Anterior" href="{{ page.paginate.root }}" rel="prev">&#8249;<span class="sr-only"> page</span></a>
+           {% else %}
+           <a class="pagination-item" style="font-size: 17px;" onclick="mostrar()" title="Anterior" href="{{ paginator.previous_page_path }}" rel="prev">&#8249;<span class="sr-only"> page</span></a>
+           {% endif %}
+       </li>
+       {% endif %}
+   
+       {% unless paginator.page == 1 %}
+       <li class="page first">
+           <a class="pagination-item" onclick="mostrar()" href="{{ page.paginate.root }}"><span class="sr-only">page </span>1</a>
+       </li>
+       <li class="pages-indicator{{ indicator_first }} pages-indicator--offset-{{ relative_first }}"><span aria-hidden="true" style="color:white">...</span><span class="sr-only">Skipped pages indicator</span></li>
+       {% else %}
+       <li class="page first current-page">
+           <span class="pagination-item"><span class="sr-only">current page</span><span aria-hidden="true">1</span></span>
+       </li>
+       {% endunless %}
+   
+       {% for count in (2..paginator.total_pages) %}
+       {% if count >= page_amountprev and count <= page_amountnext %}
+       {% assign relative_to_current = paginator.page | minus: count | replace: '-', '' | divided_by: 1 %}
+       {% unless count == totalpages %}
+       <li class="page offset-{{relative_to_current}}{% if count == paginator.page %} current-page{% endif %}">
+           {% if count == paginator.page %}
+           <span class="pagination-item"><span class="sr-only">current page</span><span aria-hidden="true">{{ count }}</span></span>
+           {% else %}
+           <a class="pagination-item"  onclick="mostrar()" href="{{ page.paginate.root | append: '/page' | append: count | append: '/' | replace: '//', '/' }}"><span class="sr-only">page </span>{{ count }}</a>
+           {% endif %}
+       </li>
+       {% endunless %}
+       {% endif %}
+       {% endfor %}
+   
+       {% unless paginator.page == totalpages %}
+       <li class="pages-indicator{{ indicator_last }} pages-indicator--offset-{{ relative_last }}"><span aria-hidden="true">...</span><span class="sr-only">Skipped pages indicator</span></li>
+       <li class="page last">
+           <a class="pagination-item" onclick="mostrar()" href="{{ page.paginate.root | append: '/page' | append: totalpages | append: '/' | replace: '//', '/' }}"><span class="sr-only">page </span>{{ totalpages }}</a>
+       </li>
+       {% else %}
+       <li class="page last current-page">
+           <span class="pagination-item"><span class="sr-only">current page</span><span aria-hidden="true">{{ totalpages }}</span></span>
+       </li>
+       {% endunless %}
+   
+       {% if paginator.next_page %}
+       <li class="next">
+           <a class="pagination-item" title="Siguiente" onclick="mostrar()" style="font-size: 17px;" href="{{ paginator.next_page_path }}" rel="next">&#8250;<span class="sr-only"> page</span></a>
+       </li>
+       {% endif %}
+   </ul>
+</div>
+
+
+
+
+</main>
+

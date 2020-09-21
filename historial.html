@@ -1,0 +1,113 @@
+---
+layout: main2
+permalink: /historial
+title: "Historial de BreakTimeTv"
+---
+
+
+<main class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    <div class="row" style="    padding: 60px 15px 15px;">
+
+        <div class="col-12 col-md-12 col-lg-12" style="    padding: 0;text-align: center;    margin-bottom: 30px;" > 
+
+           <span style="font-size:18px; color:white">¿Desea limpiar su historial? </span> <span title="Limpiar historial" onclick="clearHistory();" style="color: white;padding:1px 10px;    cursor: pointer; margin-left: 10px; background: #cb134a; font-size:18px;font-weight: bold;" >Limpiar</span>
+
+       
+       </div>
+
+        <div id="rightPanelbrowsebig">
+
+
+        </div>
+
+
+
+
+     
+	</div>
+
+    <script src="/assets/js/jquery-3.4.1.min2.js"></script>
+    <script  src="/assets/js/jquery-latest.min2.js"></script>
+<script>
+
+function clearHistory() {
+    swal({
+                title: "¿Deseas eliminar tu historial de reproducciones?",
+                text: "Se eliminará todo el contenido que hayas visto en BreakTimeTv",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                confirmButtonText: "Eliminar",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    setCookie("RecentViewList", "", -1);
+                     document.getElementById('rightPanelbrowsebig').innerHTML = "";
+                     document.getElementById("rightPanelbrowsebig").innerHTML = '<p style="color:white"> Su historial de reproducciones está vacío</p>';
+
+                } 
+            });
+
+  
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString() + "; path=/";
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1);
+      if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+  }
+  return "";
+}
+
+
+$(document).ready(function () {
+
+
+
+ 
+    var arr = getCookie("RecentViewList");
+
+    if (arr != "") {
+
+        
+    arr = $.parseJSON(arr);
+    var HtmlData = "";
+    $.each(arr.reverse(), function (index, value) {
+
+        HtmlData +='<a  class="" onclick="mostrar()" href="'+value.Url+'"><div title="'+value.Title+'" class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="    padding-bottom: 15px;    padding-right: 0;padding-left: 0;"><div class="row" style="display: flex;align-items: center;"><div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="    padding-left: 0;text-align: center;"><img style="width: 150px;    height: 80px;" src="'+value.Portada+'"/></div><div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding: 0;"><p class="color_busqueda" style="padding-bottom: 10px;;color:white">'+value.Title+'</p><p style="color: #a4a4a4;font-size: 14px;"><span style="color:white">Visto el: </span>'+value.Fecha+'</p></div></div></div></a>';
+        
+        
+    });
+
+    $("#rightPanelbrowsebig").html(HtmlData);
+
+    }else{
+        
+        document.getElementById("rightPanelbrowsebig").innerHTML = '<p style="color:white;font-size: 18px;text-align: center;"> Su historial de reproducciones está vacío</p>';
+    }
+
+
+
+   
+});
+
+
+</script>
+
+
+
+
+</main>

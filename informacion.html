@@ -1,0 +1,113 @@
+---
+layout: main2
+permalink: /informacion
+title: "Información del 2020"
+---
+
+
+<main class="home" id="informacion" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    <div class="row" style="    padding: 60px 15px 15px;">
+
+        
+
+
+        <div class="col-12 col-md-12 col-lg-12" style="    padding: 0;" > 
+
+            <p style="padding-bottom: 15px;color:#fff;font-weight: bold;font-size:18px;    text-align: center;">Comparte BreakTimeTv con tus amistades</p>
+            	
+             <p style="text-align: justify;color:#acacac;font-size:16px">No generamos ningún ingreso económico con este proyecto pero si nos gustaría que nos apoyes compartiéndonos y que el mundo entero conozcan a los breaknamitas. </p>  
+               
+             <p style="padding-bottom: 5px;color:#fff;font-weight: bold;font-size:18px;    padding-top: 10px;">Redes Sociales Oficiales</p>
+             <div style="padding-bottom: 45px;">
+
+                    <a id="instagram_whatsapp2" style="float: left;"  href="instagram://user?username=_breaktimetv" title="Seguirnos en instagram" class="Button texto_post"><i style="font-size: 20px;padding-top: 10px;" class="fab fa-instagram"></i> </a> 
+            
+            </div>
+             <p style="padding-top: 15px;padding-bottom: 5px;color:#fff;font-weight: bold;font-size:18px"><i style="color: white;padding-right: 15px;" class="fas fa-globe"></i>Web Oficial</p>
+
+             <input readonly="" class="form-control" style="font-size: 17px;width:100%;     background: #d6d6d6;" type="text" value='https://breaktimetv.github.io' id="texto">
+             <div align="center" style="    padding-top: 15px;"> 
+
+                     <div class="tooltip2" >
+                             <a class="btn btn-primary" style="color:white; background-color: #cb134a;border-color: #cb134a;" onclick="getLink()" onmouseout="outFunc()">
+                                   <span class="tooltiptext" id="myTooltip">Copiar enlace</span>
+                                   Copiar enlace
+
+                             </a>
+                          
+                           </div>
+
+             </div>
+
+            
+         
+
+            <p style="padding-bottom: 5px;color:#fff;font-weight: bold;font-size:18px"><i style="color: white;padding-right: 15px;" class="fab fa-paypal"></i>Donación</p>
+            <p style="text-align: justify;color:#acacac;font-size:16px">Si deseas donarnos algo, bienvenido sea n_n/ </p>  
+           <div align="center">   
+                <a rel="noreferrer" href="https://www.paypal.me/fernando3030/1"> <img style="width:150px;padding-top: 10px;" alt="Donación" src="/donar.png"> </a>
+
+
+           </div> 
+             <hr>
+
+             <p style="padding-bottom: 10px;"><a style="color: #acacac;font-weight: bold;font-size: 16px;" href="{{ site.baseurl}}/terminos-servicios" onclick="mostrar()">Términos de Servicios</a></p>
+             <p style="padding-bottom: 10px;"><a style="color: #acacac;font-weight: bold;font-size: 16px;" href="{{ site.baseurl}}/aviso-legal" onclick="mostrar()">Aviso Legal</a></p>
+             <p style="padding-bottom: 10px;"><a style="color: #acacac;font-weight: bold;font-size: 16px;" href="{{ site.baseurl}}/politica-privacidad" onclick="mostrar()">Política de privacidad</a></p>
+        </div>
+
+     
+	</div>
+
+   
+<script>
+function getLink() {
+
+
+var myCode = document.getElementById("texto").value;
+var fullLink = document.createElement('input');
+document.body.appendChild(fullLink);
+fullLink.value =  myCode;
+fullLink.select();
+document.execCommand("copy", false);
+fullLink.remove();
+var tooltip = document.getElementById("myTooltip");
+tooltip.innerHTML = "Enlace copiado"
+
+
+}
+
+function outFunc() {
+var tooltip = document.getElementById("myTooltip");
+tooltip.innerHTML = "Copiar enlace";
+}
+
+
+function getLink2() {
+
+
+var myCode = document.getElementById("texto2").value;
+var fullLink = document.createElement('input');
+document.body.appendChild(fullLink);
+fullLink.value =  myCode;
+fullLink.select();
+document.execCommand("copy", false);
+fullLink.remove();
+var tooltip = document.getElementById("myTooltip2");
+tooltip.innerHTML = "Enlace copiado"
+
+
+}
+
+function outFunc2() {
+var tooltip = document.getElementById("myTooltip2");
+tooltip.innerHTML = "Copiar enlace";
+}
+
+
+</script>
+
+
+
+
+</main>

@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: breaktimetv.github.io
+Token: 87cb9a21de4333ece71e6ba8f91ba947b09ed95f432687a8b375f776e3eb7d10

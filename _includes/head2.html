@@ -1,0 +1,258 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#000" />
+    <meta name="keywords" content="peliculas online, peliculas gratis, series online, series gratis, ver peliculas online, ver series online, peliculas y series 2018" />
+    <meta property="og:type" content="website"/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="BreakTimeTv"/>
+    <meta name="google-site-verification" content="IcoRfASJcsqIS85BLXpPLXVrColB6pzX18wtNURRc0Q" />
+   
+    <title> {{ page.title }}</title>
+    
+
+
+
+    
+    <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@imbriitneysam">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.username }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.image_banner %}
+    <meta property="twitter:image" content="{{ page.image_banner }}">
+    {% else %}
+    <meta property="twitter:image" content="{{  page.image_banner  | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.username }}{% else %}{{ site.title }}{% endif %}">
+    {% if page.image_banner %}
+    <meta property="og:image" content="{{ page.image_banner }}">
+    
+    {% else %}
+    <meta property="og:image" content="{{ page.image_banner | prepend: site.baseurl | prepend: site.url }}">
+     
+    {% endif %}
+     <meta property="og:image:type" content="image/jpg"/>
+    <meta property="og:image:width" content="800"/>
+    <meta property="og:image:height" content="400"/>
+    <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="es_EC"/>
+    <meta property="fb:app_id"       content="491895904626108" />
+
+    <!-- Social: Google+ / Schema.org  -->
+    <meta itemprop="name" content="{% if page.title %}{{ page.title }} | {{ site.username }}{% else %}{{ site.title }}{% endif %}"/>
+    <meta itemprop="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta itemprop="image" content="{{ page.image_banner | prepend: site.baseurl | prepend: site.url }}"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{site.baseurl}}/icon-min2.png" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="{{site.baseurl}}/icon-min2.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{site.baseurl}}/57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{site.baseurl}}/72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{site.baseurl}}/114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{site.baseurl}}/144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="{{site.baseurl}}/60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{site.baseurl}}/120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{site.baseurl}}/76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{site.baseurl}}/152.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{site.baseurl}}/192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{site.baseurl}}/96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{site.baseurl}}/16.png">
+    <link rel="manifest" href="/manifest.json">
+    
+
+     <link rel="stylesheet" href="/assets/css/medile.css">
+    <link rel="stylesheet" href="/assets/css/jquery.mb.YTPlayer.min.css">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="/assets/css/sweetalert.css">
+
+    <link rel="stylesheet" href="/assets/css/tooltipster.bundle.min.css">
+    
+    <link rel="stylesheet" href="/assets/css/tooltipster-sideTip-punk.min.css">
+  <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="{{site.baseurl}}/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+
+
+
+
+
+ 
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="{{ site.username }}">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    <meta name="msapplication-TileImage" content="{{site.baseurl}}/152.png"/>
+    <meta name="msapplication-TileColor" content="#000000"/>
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#cb134a">
+
+
+    
+  
+    
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/assets/css/flexboxgrid.min.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+    <meta property="fb:app_id" content="491895904626108" />
+    {% if site.google_analytics and jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
+
+    <link rel="stylesheet" href="/assets/css/swiper_bundle.min.css">
+    <style>
+        .sr-only {
+         position: absolute;
+         clip: rect(0 0 0 0);
+         height: 1px;
+         border: 0;
+     }
+     .pagination {
+         padding: 0;
+         margin: 1em 0;
+         text-align: center;
+         width: 100%;
+         display: table-row;
+     }
+     
+     .pagination li.page.current-page .pagination-item {
+         background: #cb134a;
+         box-shadow: inset 0 0 5px rgba(0,0,0,.3);
+         color: #fff;
+     }
+     
+     .pagination li.page .pagination-item {
+    
+        background: #eee;
+        color: #000;
+        box-shadow: inset 0 0 5px rgba(0,0,0,.05);
+        margin: 2px;
+     }
+     
+     .article__item__header a, .button, .mfp-close, .navigation__link, .pagination li.page .pagination-item, .post__title a, .social_links li a, .stack-item__button, .talk, a:hover {
+         text-decoration: none;
+     }
+     
+     .pagination li .pagination-item {
+         display: block;
+         
+     }
+     
+     .pagination li {
+    
+         padding: 0;
+         list-style: none;
+     }
+     
+    
+     
+     @media (min-width: 768px){
+         .pagination .pages-indicator--offset-8 {
+         display: none;
+     }
+     
+     }
+     
+     
+     
+     
+     .previous {
+         background-color: #111;
+         color: #fff;
+         border-style: none;
+     }
+     
+     .next {
+         background-color: #111;
+         color: #fff;
+         border-style: none;
+     }
+     
+     .pagination>li>a, .pagination>li>span {
+         position: relative;
+         float: left;
+         padding: 6px 12px;
+         margin-left: -1px;
+         line-height: 1.42857143;
+         font-weight: bold;
+         color: white;
+         background-color: #454545;
+     display:none;
+         border: none;
+     }
+     
+
+
+     .swiper-container {
+      width: 100%;
+      height: 500px;
+      background: #000;
+    }
+
+  
+
+    .parallax-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .swiper-slide .title {
+      font-size: 41px;
+      font-weight: 300;
+    }
+
+    .swiper-slide .subtitle {
+      font-size: 21px;
+    }
+
+    .swiper-slide .text {
+      font-size: 14px;
+      max-width: 100%;
+      line-height: 1.3;
+    }
+     
+         
+         </style>
+   
+
+    
+
+
+</head>
+
+

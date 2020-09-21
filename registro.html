@@ -1,0 +1,195 @@
+---
+layout: main2
+permalink: /registro
+title: "Registro de BreakTimeTV"
+---
+
+
+<main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    <div class="row" style="padding: 60px 10px 0px 20px;">
+        <div class="col-12 col-md-4 col-lg-4"> 
+            
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-4"> 
+
+            <p style="color:white; font-size:28px;    text-align: center;font-weight: bold;margin-bottom: 5px;">Crea tu cuenta gratis</p>
+            <p style="color:white; font-size:17px;margin-bottom: 10px;">Llena todos los campos correctamente.</p>
+
+            <form id="form_registro" action="javascript:postData()" method="post">
+
+
+                <div class="input-group">
+                    <span class="input-group-addon"><i class='fas fa-user' style="    color: #fff;"></i></span>	
+                    <input required id="firstName" name="firstName" style="    height: 44px;" type="text" class="form-control" placeholder="Ingrese sus nombres" aria-label="Nombre">
+                   
+                    </div>
+
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class='fas fa-user' style="    color: #fff;"></i></span>	
+                        <input required id="lastName" name="lastName" style="    height: 44px;" type="text" class="form-control" placeholder="Ingrese sus apellidos" aria-label="Nombre">
+                       
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class='fas fa-user' style="    color: #fff;"></i></span>	
+                            <input required id="username" name="username" maxlength="32"  style="    height: 44px;" type="text" class="form-control" placeholder="Ingrese su nombre de usuario" aria-label="Nombre">
+                           
+                            </div>
+
+
+
+
+                <div class="input-group">
+                    <span class="input-group-addon"><i class='fas fa-envelope' style="    color: #fff;"></i></span>	
+                    <input required id="emailUser" name="emailUser" style="    height: 44px;" type="email" class="form-control" placeholder="Ingrese su email" aria-label="Email">
+                   
+                    </div>
+
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class='fas fa-lock' style="    color: #fff;"></i></span>	
+                        <input required id="passwordUser" name="passwordUser" style="    height: 44px;" type="password" class="form-control" placeholder="Ingrese una contraseña" aria-label="Email">
+                        <span style="cursor: pointer;" id="password_icon" onclick="mostrarContrasena()" class="input-group-addon"><i id="icon_password" class='fas fa-eye' style="color: #fff;"></i></span>
+                        </div>
+
+                        <div class="checkbox">
+                            <label><input required id="terminos" type="checkbox" value="false"><p style="    font-size: 17px;
+                              margin-left: 10px;
+                              color: white;">Yo acepto los <a style="color: #ed0b4a;font-weight: bold;" href="{{ site.baseurl}}/terminos-servicios" target="_blank">Términos y Condiciones</a> de BreakTimeTv</p></label>
+                          </div>
+               
+
+                
+
+                  <div align="center" style="    margin-top: 15px;">
+                      <button disabled id="btn_registro" type="submit" type="button" class="btn btn-primary btn-lg">Crear cuenta</button>
+
+                  </div>
+                
+              </form>
+
+         
+
+            
+
+            </div>
+
+
+            <div class="col-12 col-md-4 col-lg-4"> 
+
+            
+
+            </div>
+	
+  </div>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+
+
+
+window.addEventListener('load', function() {
+ 
+
+ if (localStorage.getItem("userId") === null) {
+
+  
+ }else{
+
+    window.location.href = "/profile";
+ }
+
+});
+
+  
+ function mostrarContrasena(){
+      var tipo = document.getElementById("passwordUser");
+      if(tipo.type == "password"){
+          tipo.type = "text";
+          $('#icon_password').addClass('fa-eye-slash').removeClass('fa-eye');
+         
+      }else{
+          tipo.type = "password";
+          $('#icon_password').addClass('fa-eye').removeClass('fa-eye-slash');
+      }
+  }
+
+
+  $('#terminos').on('change', function () {
+    if (this.checked) {
+
+      
+    $("#btn_registro").prop('disabled', false);
+
+        }else{
+            $("#btn_registro").prop('disabled', true);
+
+        }
+    });
+
+    $('#username').on('keypress', function(e) {
+        if (e.which == 32)
+            return false;
+    });
+
+
+
+
+          function postData() {
+
+            var emailUser = document.getElementById('emailUser').value;
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var passwordUser = document.getElementById('passwordUser').value;
+            var username = document.getElementById('username').value;
+            console.log("emailUser es: "+ emailUser);
+            $("#btn_registro").prop('disabled', true);
+
+            const data= {username:username,email: emailUser,firstName: firstName,lastName: lastName,password: passwordUser};
+            const config = {
+                headers: {
+                  'X-Requested-With': 'XMLHttpRequest',
+                  'Content-Type': 'application/json'
+                }
+              };
+          
+
+            axios.post('https://us-central1-breaktimetv-2c832.cloudfunctions.net/requestWeb/api/v1/user/create/new', data, config).then(function(res) {
+                if(res.data.code == 200) {
+            
+                        swal("Éxito!", "Te registraste correctamente", "success");
+                    $("#terminos").prop('checked', false);
+                    document.getElementById('emailUser').value="";
+                   document.getElementById('firstName').value="";
+                   document.getElementById('lastName').value="";
+                   document.getElementById('passwordUser').value="";
+                   document.getElementById('username').value="";
+
+                    }else{
+                        $("#btn_registro").prop('disabled', false);
+                    swal("Error!", "Lo sentimos ocurrió un error en su registro", "warning");
+                    }
+                }).catch(function(err) {
+                    $("#btn_registro").prop('disabled', false);
+                    swal("Error!", "Lo sentimos ocurrió un error en su registro", "warning");
+                });
+
+
+
+          
+
+
+
+          }
+  
+  </script>
+
+   
+
+
+
+
+
+</main>
